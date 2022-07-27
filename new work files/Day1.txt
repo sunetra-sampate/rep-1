@@ -1,0 +1,14 @@
+CREATE TABLE EMPLOYEE(    
+EMPLOYEE_ID int NOT NULL, FIRST_NAME varchar(255), LAST_NAME varchar(255), DEPT_ID int,Salary int ,Designation varchar2(30), PRIMARY KEY (EMPLOYEE_ID));
+
+
+insert into EMPLOYEE values(10,'Sumit','Pendkar',40,25000,'QA');
+insert into EMPLOYEE values(20,'Sandesh','Pawar',40,28000,'QA');
+insert into EMPLOYEE values(30,'Prashant','Rathor',50,35000,'Senior QA');
+insert into EMPLOYEE values(40,'Vijay','Dhanekar',60,32000,'Senior QA');
+insert into EMPLOYEE values(50,'Binay','Roy',50,18000,'Associate QA');
+insert into EMPLOYEE values(60,'Manish','Sahoo',40,23000,'QA');
+insert into EMPLOYEE values(70,'Tarun','Verma',20,42000,'Manager');
+insert into EMPLOYEE values(80,'Sharad','Sharma',30,29000,'QA');
+insert into EMPLOYEE values(90,'Raju','Giri',20,21000,'QA');
+

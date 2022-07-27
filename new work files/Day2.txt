@@ -1,0 +1,144 @@
+CREATE TABLE EMPLOYEE(    
+EMPLOYEE_ID int NOT NULL, FIRST_NAME varchar(255), LAST_NAME varchar(255), DEPT_ID int,Salary int ,Designation varchar2(30), PRIMARY KEY (EMPLOYEE_ID));
+
+
+insert into EMPLOYEE values(10,'Sumit','Pendkar',40,25000,'QA');
+insert into EMPLOYEE values(20,'Sandesh','Pawar',40,28000,'QA');
+insert into EMPLOYEE values(30,'Prashant','Rathor',50,35000,'Senior QA');
+insert into EMPLOYEE values(40,'Vijay','Dhanekar',60,32000,'Senior QA');
+insert into EMPLOYEE values(50,'Binay','Roy',50,18000,'Associate QA');
+insert into EMPLOYEE values(60,'Manish','Sahoo',40,23000,'QA');
+insert into EMPLOYEE values(70,'Tarun','Verma',20,42000,'Manager');
+insert into EMPLOYEE values(80,'Sharad','Sharma',30,29000,'QA');
+insert into EMPLOYEE values(90,'Raju','Giri',20,21000,'QA');
+insert into EMPLOYEE values(100,'Vinit','Deshmukh',30,35000,'QM');
+insert into EMPLOYEE values(110,'Ranjesh','Sontakke',30,35000,'QC');
+insert into EMPLOYEE values(120,'Pooja','Pawar',30,35000,'QRM');
+
+***********************************************************************
+
+CREATE TABLE EMPLOYEE1(    
+EMPLOYEE_ID int NOT NULL, FIRST_NAME varchar(255), LAST_NAME varchar(255), DEPT_ID int,Salary int ,Designation varchar2(30), Hire_Date Date,PRIMARY KEY (EMPLOYEE_ID));
+
+
+insert into EMPLOYEE1 values(10,'Sumit','Pendkar',40,25000,'QA','23-Feb-20');
+insert into EMPLOYEE1 values(20,'Sandesh','Pawar',40,28000,'QA','21-Mar-19');
+insert into EMPLOYEE1 values(30,'Prashant','Rathor',50,35000,'Senior QA','03-Jan-21');
+insert into EMPLOYEE1 values(40,'Vijay','Dhanekar',60,32000,'Senior QA','23-Feb-22');
+insert into EMPLOYEE1 values(50,'Binay','Roy',50,18000,'Associate QA','23-Mar-19');
+insert into EMPLOYEE1 values(60,'Manish','Sahoo',40,23000,'QA','23-Jul-18');
+insert into EMPLOYEE1 values(70,'Tarun','Verma',20,42000,'Manager','23-Dec-20');
+insert into EMPLOYEE1 values(80,'Sharad','Sharma',30,29000,'QA','23-Aug-19');
+insert into EMPLOYEE1 values(90,'Raju','Giri',20,21000,'QA','23-Jun-19');
+insert into EMPLOYEE1 values(100,'Vinit','Deshmukh',30,35000,'QM','23-Sep-17');
+insert into EMPLOYEE1 values(110,'Ranjesh','Sontakke',30,35000,'QC','23-Oct-18');
+insert into EMPLOYEE1 values(120,'Pooja','Pawar',30,35000,'QRM','23-Dec-19');
+
+----------------------------------------------------------------------------------------------
+12-07-2022 Data:
+CREATE TABLE EMPLOYEE(    
+EMPLOYEE_ID int NOT NULL, FIRST_NAME varchar(255), LAST_NAME varchar(255), DEPT_ID int,Salary int ,Designation varchar2(30), PRIMARY KEY (EMPLOYEE_ID));
+
+
+select * from employee
+
+select employee_id, first_name, salary from employee
+
+select distinct dept_id from employee
+
+select * from employee where dept_id = 40;
+select * from employee where designation = 'Senior QA';
+
+select employee_id, first_name from employee where designation = 'Senior QA';
+
+//created new table as employee1
+
+select * from employee1
+
+//Date should be in DD-Mon-YY format and character string/date should be provided in single quotes ''
+
+select * from employee1 where hire_date = '03-Jan-21';
+
+select * from employee1 where salary <> 35000;
+
+select * from employee1 where designation = 'Senior QA';
+
+select * from employee1 where hire_date >= '12-Jan-20';
+
+select * from employee1 where first_name between 'Sumit' and 'Sharad';//this is not valid
+
+select * from employee1 where salary between 25000 and 30000;
+select * from employee1 where salary >= 25000 and salary <=30000;
+
+select * from employee1 where employee_id between 50 and 90;
+
+//In operator can be used for characters as well as for values...
+//If you are providing characters list, then it should be in single quotes.
+//If you are proving the values, no need of single quotes..
+
+select * from employee1 where first_name IN ('Sumit','Dharmesh','Raj');
+
+select * from employee1 where dept_id IN (40,50,60,70);
+
+select * from employee1
+
+select * from employee1 where first_name like 'S%'
+select * from employee1 where last_name like 'P%'
+select * from employee1 where designation like 'Q%'
+
+select * from employee1 where first_name like '%y'
+select * from employee1 where last_name like '%ar'
+select * from employee1 where first_name like '%o%'
+select * from employee1 where last_name like '%y%'
+
+select * from employee1 where salary like '20%'
+
+select * from employee1 where last_name like 'S%ke'
+
+select * from employee1 where designation like 'Q%'
+select * from employee1 where designation like '%Q%'
+
+select * from employee1 where designation like 'Q_'
+
+select * from employee1 where last_name like 'G_r_';
+
+select * 
+from employee1 
+where last_name 
+like 'G_r_';
+
+//you can use below forms
+_Q
+Q_
+_Q_
+Q____
+____Q
+
+*********************************************************************
+
+Additional Queries::
+
+select * from employee;
+select employee_id, first_name, salary from employee;
+
+
+select * from employee where salary between 25000 and 35000;
+select * from employee where salary >= 25000 and salary <= 35000;
+
+
+select * from employee where designation like '%QA';
+
+select * from employee where first_name like 'S%';
+select * from employee where dept_id like '%0';
+
+
+select * from employee where designation IN ('QA','Senior QA');
+
+select * from  employee where dept_id IN (30,40);
+
+select * from employee where salary >=25000 AND designation = 'QA';
+select * from employee where salary >=25000 OR designation = 'QA';
+
+select * from employee where DEPT_ID NOT IN (20,30);
+
+select * from employee where designation = 'QA';
